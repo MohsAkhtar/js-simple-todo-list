@@ -10,7 +10,11 @@ window.setTimeout(function() {
 
 		// code that handles input
 		if(input === "list"){
-			console.log(todos); // prints all todos
+			console.log("**********");
+			todos.forEach(function(todo, i){
+				console.log(i + ": " + todo); // prints all todos
+			});
+			console.log("**********");
 		} else if(input === "new"){
 			// adds new todo by asking user
 			var newTodo = prompt("Enter new todo:");
