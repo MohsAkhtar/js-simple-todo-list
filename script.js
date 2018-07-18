@@ -10,16 +10,11 @@ window.setTimeout(function() {
 
 		// code that handles input
 		if(input === "list"){
-			console.log("**********");
-			todos.forEach(function(todo, i){
-				console.log(i + ": " + todo); // prints all todos
-			});
-			console.log("**********");
+			listTodos();
 		} else if(input === "new"){
-			// adds new todo by asking user
-			var newTodo = prompt("Enter new todo:");
-			// adds to array of todos
-			todos.push(newTodo);
+			addTodo();
+		} else if(input === "delete"){
+			deleteTodo();
 		}
 
 		// asks again for input
@@ -27,4 +22,29 @@ window.setTimeout(function() {
 	}
 
 	console.log("Cya later!");
+
+	function listTodos(){
+		console.log("**********");
+			todos.forEach(function(todo, i){
+				console.log(i + ": " + todo); // prints all todos
+			});
+			console.log("**********");
+	}
+
+	function addTodo(){
+		// adds new todo by asking user
+			var newTodo = prompt("Enter new todo:");
+			console.log("Added a todo");
+			// adds to array of todos
+			todos.push(newTodo);
+	}
+
+	function deleteTodo(){
+		// ask for index of todo to be deleted
+			var index = prompt("Enter index of to do to delete");
+			// delete that todo
+			todos.splice(index,1);
+			console.log("Deleted todo");
+	}
+
 }, 500);
