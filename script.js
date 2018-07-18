@@ -1,4 +1,6 @@
 var todos = [];
+
+// This setTimeout gives the HTML a half second to load before running the JS
 window.setTimeout(function() {
 	
 
